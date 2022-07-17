@@ -1,4 +1,5 @@
 package weeklysoa;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,8 +13,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-
-
 
 public class SoaMail {
 
@@ -49,7 +48,7 @@ public class SoaMail {
 
 			}
 		}
-	
+
 		System.out.println("Dhandapani ");
 		System.out.println("Ok");
 	}
