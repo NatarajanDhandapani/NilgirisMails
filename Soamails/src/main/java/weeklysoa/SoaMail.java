@@ -16,7 +16,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class SoaMail {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, Exception, Exception {
 		Map<Integer, String> add1 = new HashMap<Integer, String>();
 		Map<Integer, String> add2 = new HashMap<Integer, String>();
 		FileInputStream xlsfile = new FileInputStream("e:/debtors/Master.xlsx");
