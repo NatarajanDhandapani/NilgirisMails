@@ -49,8 +49,8 @@ public class SoaMail {
 			}
 		}
 
-		System.out.println("Dhandapani ");
-		System.out.println("Ok");
+		System.out.println("Dhandapani ... completed ");
+		 
 	}
 
 }
