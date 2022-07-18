@@ -1,11 +1,9 @@
 package weeklysoa;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -13,9 +11,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-
 public class SoaMail {
-
 	public static void main(String[] args) throws IOException, Exception, Exception {
 		Map<Integer, String> add1 = new HashMap<Integer, String>();
 		Map<Integer, String> add2 = new HashMap<Integer, String>();
@@ -40,17 +36,12 @@ public class SoaMail {
 				String pdfFileInText = soatext.getText(soamail);
 				String lines[] = pdfFileInText.split("\\r?\\n");
 				code = Integer.parseInt(lines[4].substring(lines[4].indexOf(":") + 2));
-
 				System.out.println(lines[4].substring(lines[4].indexOf(":") + 2) + " ~ "
 						+ lines[5].substring(lines[5].indexOf(":") + 2) + " ~ "
 						+ lines[16].substring(lines[16].indexOf(":") + 2, 43) + " ~ " + add1.get(code) + " ~ "
 						+ add2.get(code));
-
 			}
 		}
-
 		System.out.println("Updated as on 18.07.22 ");
-		 
 	}
-
 }
