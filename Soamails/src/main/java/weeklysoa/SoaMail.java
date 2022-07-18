@@ -49,7 +49,7 @@ public class SoaMail {
 			}
 		}
 
-		System.out.println("Dhandapani ... completed  updated upto 18.7.22 name changed ");
+		System.out.println("Updated as on 18.07.22 ");
 		 
 	}
 
