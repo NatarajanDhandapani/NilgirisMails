@@ -1,8 +1,9 @@
-// updated on 19.02.23 @ 14.00 hrs
+// updated on 25.02.23 @ 09.00 hrs
 package weeklysoa;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +37,9 @@ public class SoaMail {
 		properties.put("mail.smtp.port", port);
 		properties.put("mail.smtp.auth", "true");
 		properties.put("mail.smtp.starttls.enable", "true");
-		properties.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
+	 	properties.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
+	 	properties.put("mail.smtp.isSSL","true");
+		properties.put("mail.debug", "true");
 		properties.put("mail.user", userName);
 		properties.put("mail.password", password);
 		// creates a new session with an authenticator
@@ -106,19 +109,33 @@ public class SoaMail {
 						+ add2.get(code));
 			}
 		}
+	
+		//System.out.println( InetAddress.getLocalHost().getHostName());
+		
+		boolean t = false;
 		String host = "smtp.gmail.com";
 		String port = "587";
 		String mailFrom = "ndp15143@gmail.com";
-		String password = "fitdfmrrxftcxqpg";
+		String password = "conornnanbqzpqgu";
+		if (t) {
+			host = "localhost";
+			port = "135";
+			mailFrom = "dhandapani@futureconsumer.in";
+			password = "Future@2023";
+		}
+		
+		System.out.println(InetAddress.getLocalHost().getHostName());
+		 
 		// message info
 		String mailTo = "ndp15143@yahoo.com";
-		String subject = "New email with attachments";
+		mailTo="dhandapani@futureconsumer.in";
+		String subject = "New email with attachments no 333  " + mailFrom;
 		String message = "I have some attachments for you.";
 		// attachments
-		String[] attachFiles = new String[3];
+		String[] attachFiles = new String[1];
 		attachFiles[0] = "d:/tnstore/ledger.xlsx";
-		attachFiles[1] = "d:/tnstore/ledger.xlsx";
-		attachFiles[2] = "d:/tnstore/ledger.xlsx";
+		//attachFiles[1] = "d:/tnstore/ledger.xlsx";
+		//attachFiles[2] = "d:/tnstore/ledger.xlsx";
 		try {
 			sendEmailWithAttachments(host, port, mailFrom, password, mailTo, subject, message, attachFiles);
 			System.out.println("Email sent. ..... dhandapani");
